@@ -1,0 +1,256 @@
+/*---Inicio carga index--*/
+
+#contenedor_carga{
+  background-color: rgba(250,240,245,0.9);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  z-index: 10000;
+}
+
+.btn-carga{
+  background-color: rgba(250,240,245,0.9);
+  border: none;
+}
+/*---Fin carga index--*/
+
+/*----Inicio header-----*/
+.bg-image{
+    background-image: url("../images/nubes.png");
+    background-size: cover;
+    padding:60px;
+
+    animation: animatedBackground 50s linear infinite;
+    -ms-animation: animatedBackground 50s linear infinite;
+    -moz-animation: animatedBackground 50s linear infinite;
+    -webkit-animation: animatedBackground 50s linear infinite;
+}
+
+.bg-sky{
+  background-color: #8ec1da;
+}
+
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+@-webkit-keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+@-ms-keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+@-moz-keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+
+/*----Fin header-----*/
+
+a{
+    text-decoration: none;
+}
+
+p{
+    text-align: justify;
+}
+
+
+
+.my-margin{
+    margin: 55px;
+}
+
+.my-margin2{
+    margin: 80px;
+}
+
+
+a{
+    color:gray;
+  }
+  a:hover{
+    color: black;
+  }
+  .space{
+    min-height: 50px;
+  }
+  .color-blue{
+    background-color: #032c8e;
+  }
+  .color-blue-bold{
+    background-color: #002777;
+  }
+
+  .miForm{
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+
+  }
+  .miText-justify{
+     text-align: justify;
+  }
+
+  .miLink{
+    text-decoration: none;
+  }
+  
+  .miLink2{
+    color: white;
+  }
+
+  .miLink2:hover{
+    color: #70CAEE;
+  }
+
+  .text-small{
+    font-size: 12px;
+  }
+
+
+  /*Inicio artículos*/
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  /*Fin artículos*/
+
+  /*Inicio cards con fondo de imagen*/
+  .rounded-4 { border-radius: .5rem; }
+  .rounded-5 { border-radius: 1rem; }
+
+  .text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
+
+  .card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  /*Fin cards con fondo de imagen*/
+
+  /*Inicio color de fondo de cards sin imagen*/
+  .bg-opt1{
+    background-color: #3157A7; /*Azúl*/
+  }
+  .bg-opt2{
+    background-color: #5D3953; /*Morado*/
+  }
+  .bg-opt3{
+    background-color: #A8C545; /*Verde limón*/
+  }
+  .bg-opt4{
+    background-color: #5AB1CF; /*Celeste*/
+  }
+  .bg-opt5{
+    background-color: #E8AE4B; /*Durazno*/
+  }
+  .bg-opt6{
+    background-color: #F69179; /*Anaranjado suave*/
+  }
+  /*Fin color de fondo de cards sin imagen*/
+
+
+  /*Inicio burbujas*/
+  .bg_animate{
+    width: 100%;
+    height: 100vh;
+    /*background-color: linear-gradient(to right, #005c98, #505bda);*/
+    /*background-color:  #f3d77d;*/
+    position: relative;
+    overflow: hidden;
+}
+
+.burbuja{
+    border-radius: 50%;
+    background: #3157A7;
+    opacity: .3;
+    position: absolute;
+    bottom: -150;
+
+    animation: burbujas 3s linear infinite;
+}
+
+.burbuja:nth-child(1){
+    width: 80px;
+    height: 80px;
+    left: 5%;
+    animation-duration: 5s;
+    
+}
+
+.burbuja:nth-child(2){
+    width: 100px;
+    height: 100px;
+    left: 35%;
+    animation-duration: 3s;
+    
+}
+
+.burbuja:nth-child(3){
+    width: 20px;
+    height: 20px;
+    left: 15%;
+    animation-duration: 1.5s;
+    
+}
+
+.burbuja:nth-child(4){
+    width: 50px;
+    height: 50px;
+    left: 90%;
+    animation-duration: 2s;
+    
+}
+
+.burbuja:nth-child(5){
+    width: 70px;
+    height: 70px;
+    left: 65%;
+    animation-duration: 5s;
+    
+}
+
+.burbuja:nth-child(6){
+    width: 33px;
+    height: 33px;
+    left: 55%;
+    animation-duration: 4s;
+    
+}
+
+@keyframes burbujas{
+    0%{
+        bottom: 0;
+        opacity: 0;
+    }
+    30%{
+        transform: translateX(30px);
+    }
+    50%{
+        opacity: .4;
+    }
+    100%{
+        bottom: 100vh;
+        opacity: 0;
+    }
+}
+
+
+  /*Fin burbujas*/
+
+

@@ -1,0 +1,38 @@
+<input type="text" id="myInput" value="Texto a copiar">
+<button onclick="copyText()">Copiar</button>
+<br>
+<input type="text" id="myInput2" value="Texto a copiar">
+<button onclick="copyText2()" id="btn2">Copiar</button>
+
+
+<script>
+function copyText() {
+  // Obtener el campo de entrada
+  var input = document.getElementById("myInput");
+
+  // Seleccionar el texto en el campo de entrada
+  input.select();
+
+  // Copiar el texto seleccionado al portapapeles del sistema
+  document.execCommand("copy");
+
+  // Opcional: Cambiar el texto del botón después de copiar
+  var button = document.querySelector("button");
+  button.innerHTML = "¡Copiado!";
+}
+
+function copyText2() {
+  // Obtener el campo de entrada
+  var input2 = document.getElementById("myInput2");
+
+  // Seleccionar el texto en el campo de entrada
+  input2.select();
+
+  // Copiar el texto seleccionado al portapapeles del sistema
+  document.execCommand("copy");
+
+  // Opcional: Cambiar el texto del botón después de copiar
+  var button2 = document.getElementById("btn2");
+  button2.innerHTML = "¡Copiado!";
+}
+</script>

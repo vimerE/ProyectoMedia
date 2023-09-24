@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Texto a Voz</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <style>
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#container {
+  margin: 50px auto;
+  max-width: 500px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+#controls button {
+  margin: 5px;
+}
+
+/*#progress-bar {
+  height: 10px;
+  background-color: #ddd;
+}
+
+#progress {
+  height: 100%;
+  width: 0;
+  background-color: #4CAF50;
+}*/
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Texto a Voz</h1>
+    <textarea id="text-to-speech" placeholder="Escribe tu texto aquí"></textarea>
+    <div id="controls">
+      <button id="play-button">Play</button>
+      <button id="pause-button">Pausar</button>
+      <button id="resume-button">Reanudar</button>
+    </div>
+    <div class="progress">
+      <div class="progress-bar bg-primary" id="progress"></div>
+    </div>
+  </div>
+
+</body>
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+  const playButton = document.getElementById('play-button');
+  const pauseButton = document.getElementById('pause-button');
+  const resumeButton = document.getElementById('resume-button');
+  const textToSpeechInput = document.getElementById('text-to-speech');
+  const progressBar = document.getElementById('progress');
+
+  let speechUtterance = new SpeechSynthesisUtterance();
+
+  playButton.addEventListener('click', function() {
+    if (textToSpeechInput.value) {
+      speechUtterance = new SpeechSynthesisUtterance(textToSpeechInput.value);
+      speechUtterance.addEventListener('end', function() {
+        progressBar.style.width = '0';
+      });
+      speechUtterance.addEventListener('boundary', function(event) {
+        if (event.name === 'word') {
+          const progressPercentage = (event.charIndex / textToSpeechInput.value.length) * 100;
+          progressBar.style.width = progressPercentage + '%';
+        }
+      });
+      window.speechSynthesis.speak(speechUtterance);
+    }
+  });
+
+  pauseButton.addEventListener('click', function() {
+    window.speechSynthesis.pause();
+  });
+
+  resumeButton.addEventListener('click', function() {
+    window.speechSynthesis.resume();
+  });
+});
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
